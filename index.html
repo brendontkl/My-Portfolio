@@ -15,6 +15,16 @@
   <div class="cursor" id="cursor"></div>
   <div class="cursor-trail" id="cursor-trail"></div>
 
+  <!-- ─── CINEMATIC SCENE (scroll to pan through 4 shots) ─── -->
+  <div class="scene-scroll-area" id="scene-area">
+    <div class="scene-sticky">
+      <canvas id="hacker-scene"></canvas>
+      <div class="scene-skip">
+        <a href="#about" class="scene-skip-btn">skip intro ↓</a>
+      </div>
+    </div>
+  </div>
+
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-logo">
@@ -40,10 +50,10 @@
         <span class="tag-line">// Singapore-based Senior Penetration Tester</span>
       </div>
       <h1 class="hero-title animate-in" data-delay="1">
-        <span class="title-line">BREAKING</span>
-        <span class="title-line">SYSTEMS</span>
-        <span class="title-line accent">SO THEY DON'T</span>
-        <span class="title-line accent">BREAK YOU</span>
+        <span class="title-line">HACKER</span>
+        <span class="title-line">BY DAY.</span>
+        <span class="title-line accent">GAMER</span>
+        <span class="title-line accent">BY NIGHT.</span>
       </h1>
       <div class="hero-sub animate-in" data-delay="2">
         <div class="typewriter" id="typewriter"></div>
@@ -393,6 +403,7 @@ K9MWACrbhfCga5ujCBu/pJi/2dYnR6zTDfmCQJ7rXOs0h198hsrXlZS4GGyeWEbW
 hmQ3iqhvJcvwWdtMgt7WvzqN1102LA70dTfy54LbwuYfMYKkuwiUxbDB4FBIf2zf
 RFAuIYrc5mNgNLq0mjWPOh4lIlq/g1hsUwjHgUUh1CoyTFTXzsfSVkb09TZhCqRG
 sq4YiZ2PEcSXhULXWFDM23ls
+=PQIu
 -----END PGP PUBLIC KEY BLOCK-----
         </div>
         <button class="pgp-copy" onclick="copyPGP()">Copy Key</button>
@@ -407,6 +418,7 @@ sq4YiZ2PEcSXhULXWFDM23ls
     </div>
   </footer>
 
+  <script src="js/scene.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
