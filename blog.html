@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — 0xBREN</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=IBM+Plex+Mono:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <canvas id="matrix-canvas"></canvas>
+  <div class="scanlines"></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursor-trail"></div>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="nav-logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;">
+        <span class="bracket">[</span><span class="logo-text">0xBREN</span><span class="bracket">]</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about"    class="nav-link"><span class="num">01.</span>About</a></li>
+      <li><a href="index.html#cves"     class="nav-link"><span class="num">02.</span>CVEs</a></li>
+      <li><a href="blog.html"           class="nav-link" style="color:var(--green)"><span class="num">03.</span>Research</a></li>
+      <li><a href="index.html#tools"    class="nav-link"><span class="num">04.</span>Tools</a></li>
+      <li><a href="index.html#contact"  class="nav-link"><span class="num">05.</span>Contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-text">SG / UTC+8</span>
+    </div>
+  </nav>
+
+  <header class="blog-hero">
+    <div class="blog-hero-content">
+      <span class="tag-line">// Research, Writeups &amp; CVE Advisories</span>
+      <h1 class="blog-hero-title">SECURITY<br/><span class="accent">RESEARCH</span></h1>
+      <p class="blog-hero-sub">Vulnerability research, exploit writeups, red team methodologies, certification journeys, and CVE advisories by Brendon Teo.</p>
+    </div>
+  </header>
+
+  <div class="blog-controls section">
+    <div class="blog-search-wrap">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="blog-search" class="blog-search" placeholder="Search posts..." />
+    </div>
+    <div class="blog-cats">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="cert">Certifications</button>
+      <button class="filter-btn" data-cat="web">Web VAPT</button>
+      <button class="filter-btn" data-cat="infra">Infra VAPT</button>
+      <button class="filter-btn" data-cat="ad">Active Directory</button>
+      <button class="filter-btn" data-cat="kiosk">Kiosk / Thick Client</button>
+      <button class="filter-btn" data-cat="cve">CVE Research</button>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <div class="blog-featured section">
+    <article class="featured-article reveal" data-cat="cert">
+      <div class="featured-badge">// Pinned on Medium</div>
+      <div class="featured-grid">
+        <div class="featured-left">
+          <div class="post-meta">
+            <span class="post-cat">Certification</span>
+            <span class="post-date">Nov 2022</span>
+            <span class="post-read-time">Medium Article</span>
+          </div>
+          <h2 class="featured-title">OSCP — How I Tried Harder</h2>
+          <p class="featured-excerpt">A candid, no-holds-barred breakdown of the OSCP journey — the sleepless nights, the methodology that finally clicked, the 24-hour exam war stories, and the mindset shift that made all the difference. If you're preparing for OSCP, this is required reading.</p>
+          <div class="post-tags-row">
+            <span class="post-tag">OSCP</span>
+            <span class="post-tag">Certification</span>
+            <span class="post-tag">Offensive Security</span>
+            <span class="post-tag">HTB</span>
+          </div>
+          <a href="https://medium.com/@btkl123/oscp-how-i-tried-harder-d6840a6efec2" target="_blank" class="btn btn-primary">Read on Medium</a>
+        </div>
+        <div class="featured-code">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="terminal-title">exam-notes.txt</span>
+          </div>
+          <pre class="code-block"><code><span class="c-comment"># OSCP — 24hr exam strategy</span>
+<span class="c-comment"># Enumerate. Always enumerate.</span>
+
+<span class="c-kw">Phase 1:</span> Auto-recon all targets
+  nmap -sC -sV -oA initial {ip}
+  autorecon {ip}
+
+<span class="c-kw">Phase 2:</span> Manual enum per service
+  <span class="c-comment"># HTTP → gobuster, nikto, manual</span>
+  <span class="c-comment"># SMB  → enum4linux, smbclient</span>
+  <span class="c-comment"># RPC  → rpcclient -U ""</span>
+
+<span class="c-kw">Phase 3:</span> Exploit &amp; PrivEsc
+  <span class="c-comment"># Windows: winPEAS, PowerUp</span>
+  <span class="c-comment"># Linux:   linPEAS, sudo -l</span>
+
+<span class="c-val">Passed. 70+ points. Try harder.</span></code></pre>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- POSTS -->
+  <div class="blog-grid section" id="blog-grid">
+
+    <article class="blog-post-card reveal" data-cat="cve" data-title="cve-2024-40125 file upload rce cless server">
+      <div class="post-header">
+        <span class="post-cat">CVE Research</span>
+        <span class="post-date">Sep 2024</span>
+      </div>
+      <h3 class="post-card-title">CVE-2024-40125: File Upload → Full Admin RCE</h3>
+      <p class="post-card-excerpt">How an unvalidated PHP file upload in CLESS Server v4.5.2's Media Manager became a CRITICAL 9.8 unauthenticated RCE granting full Windows administrative access.</p>
+      <div class="post-footer">
+        <div class="post-tags-row">
+          <span class="post-tag">CRITICAL 9.8</span>
+          <span class="post-tag">CWE-434</span>
+        </div>
+        <a href="https://github.com/brendontkl/My-CVEs/tree/main/CVE-2024-40125" target="_blank" class="post-read">PoC →</a>
+      </div>
+    </article>
+
+    <article class="blog-post-card reveal" data-cat="web" data-title="web vapt api oauth ssrf injection">
+      <div class="post-header">
+        <span class="post-cat">Web VAPT</span>
+        <span class="post-date">Research</span>
+      </div>
+      <h3 class="post-card-title">OAuth 2.0 Misconfigurations &amp; API Attack Chains</h3>
+      <p class="post-card-excerpt">Real-world OAuth flaws from live engagements — open redirects, token leakage, PKCE bypass, and chaining SSRF to internal service exploitation.</p>
+      <div class="post-footer">
+        <div class="post-tags-row">
+          <span class="post-tag">OAuth</span>
+          <span class="post-tag">API</span>
+        </div>
+        <a href="https://medium.com/@btkl123" target="_blank" class="post-read">Medium →</a>
+      </div>
+    </article>
+
+    <article class="blog-post-card reveal" data-cat="infra" data-title="infra vapt network infrastructure nessus">
+      <div class="post-header">
+        <span class="post-cat">Infra VAPT</span>
+        <span class="post-date">Research</span>
+      </div>
+      <h3 class="post-card-title">Automating Infra VA: From Nessus to Client Report</h3>
+      <p class="post-card-excerpt">How I built CIS-NessusToExcel to automate the most painful part of infrastructure assessments — generating clean, consistent reports from raw Nessus data.</p>
+      <div class="post-footer">
+        <div class="post-tags-row">
+          <span class="post-tag">Nessus</span>
+          <span class="post-tag">Automation</span>
+        </div>
+        <a href="https://github.com/brendontkl/VAPT-Tools" target="_blank" class="post-read">GitHub →</a>
+      </div>
+    </article>
+
+    <article class="blog-post-card reveal" data-cat="cert" data-title="osep oswe crto red team evasion">
+      <div class="post-header">
+        <span class="post-cat">Certifications</span>
+        <span class="post-date">Research</span>
+      </div>
+      <h3 class="post-card-title">OSEP, OSWE &amp; CRTO — The Advanced Cert Path</h3>
+      <p class="post-card-excerpt">Lessons from the advanced offensive security certification grind — what separates OSEP from OSCP, and how CRTO fills the real-world red team gap.</p>
+      <div class="post-footer">
+        <div class="post-tags-row">
+          <span class="post-tag">OSEP</span>
+          <span class="post-tag">OSWE</span>
+          <span class="post-tag">CRTO</span>
+        </div>
+        <a href="https://medium.com/@btkl123" target="_blank" class="post-read">Medium →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <span class="footer-logo"><span class="bracket">[</span>0xBREN<span class="bracket">]</span></span>
+      <span class="footer-copy">// Brendon Teo · All vulnerabilities disclosed responsibly · Singapore</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>
