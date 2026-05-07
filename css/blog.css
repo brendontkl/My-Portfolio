@@ -74,8 +74,6 @@
 .post-card-title { font-size: 1rem; color: var(--text); line-height: 1.4; flex: 1; }
 .post-card-excerpt { font-size: 0.8rem; color: var(--text-dim); line-height: 1.6; flex: 1; }
 .post-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid var(--border); margin-top: auto; }
-.post-read { font-size: 0.8rem; color: var(--green); text-decoration: none; transition: text-shadow 0.2s; }
-.post-read:hover { text-shadow: var(--glow-sm); }
 .blog-post-card.hidden { display: none; }
 
 @media (max-width: 900px) {
