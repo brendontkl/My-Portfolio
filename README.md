@@ -1,4 +1,4 @@
-# 0xBREN — Personal Security Portfolio
+# 0xBREN — My Personal Portfolio
 > **Brendon Teo** · Senior Penetration Tester · Singapore
 
 [![My Website](https://img.shields.io/badge/🌐_My_Website-0xbren.com-8b5cf6?style=for-the-badge&labelColor=0d1117)](https://0xbren.com)
