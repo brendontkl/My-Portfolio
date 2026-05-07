@@ -35,17 +35,14 @@ portfolio/
 │   ├── style.css       # Global terminal noir theme
 │   └── blog.css        # Blog page styles
 └── js/
-    ├── scene.js        # Cinematic scroll-driven Canvas animation
-    ├── main.js         # Matrix rain, cursor, typewriter, counters, filters
-    └── blog.js         # Blog search + category filter
+    ├── scene.js        # Scroll-driven Canvas animation
+    ├── main.js         # Main JS File
+    └── blog.js         # Blog search + category filters
 ```
 
 ---
 
 ## ✨ Features
-
-**Cinematic Intro**
-Scroll-driven Canvas animation with 4 cinematic shots — wide hacker-at-desk, face close-up with screen reflection on glasses, desk overhead with CVE papers, and a terminal extreme close-up with live scrolling exploit output.
 
 **Live Stats**
 Years of experience auto-calculates from May 2022 and increments every anniversary. CVE count fetches live from the GitHub API on every visit — no manual updates needed.
@@ -78,35 +75,6 @@ npx serve .
 Open `http://localhost:8080`
 
 > Fonts load from Google Fonts CDN — an internet connection is needed for correct rendering.
-
----
-
-## 🌐 Deployment (GitHub Pages)
-
-This site is hosted on **GitHub Pages** directly from the `main` branch.
-
-**To deploy your own fork:**
-
-1. Fork this repository
-2. Go to **Settings → Pages**
-3. Set source to `main` branch, root `/`
-4. Your site will be live at `https://<your-username>.github.io/<repo-name>`
-
-**Custom domain setup:**
-
-```bash
-# Add a CNAME file to the root
-echo "yourdomain.sg" > CNAME
-git add CNAME && git commit -m "add custom domain" && git push
-```
-
-Then point your domain's DNS to GitHub Pages IPs:
-```
-185.199.108.153
-185.199.109.153
-185.199.110.153
-185.199.111.153
-```
 
 ---
 
