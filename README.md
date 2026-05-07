@@ -1,7 +1,7 @@
 # 0xBREN — Personal Security Portfolio
 > **Brendon Teo** · Senior Penetration Tester · Singapore
 
-[![My Website](https://img.shields.io/badge/🌐_My_Website-0xbren.com-8b5cf6?style=for-the-badge&labelColor=0d1117)](https://brendontkl.github.io)
+[![My Website](https://img.shields.io/badge/🌐_My_Website-0xbren.com-8b5cf6?style=for-the-badge&labelColor=0d1117)](https://0xbren.com)
 
 [![CVEs](https://img.shields.io/badge/CVEs_Filed-1-ff4757?style=for-the-badge&labelColor=0d1117)](https://github.com/brendontkl/My-CVEs)
 [![VAPT Tools](https://img.shields.io/badge/VAPT_Tools-4-00d4ff?style=for-the-badge&labelColor=0d1117)](https://github.com/brendontkl/VAPT-Tools)
